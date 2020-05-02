@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: cyan;
+    font-family: sans-serif;
+}
+
+.quiz-container {
+    max-width: 700px;
+    min-height: 500px;
+    background-color: #ffffff;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.question-number h3 {
+    color: blue;
+    border-bottom: 3px solid #ccc;
+    padding-bottom: 20px;
+}
+
+.question {
+    font-size: 22px;
+    color: #000000;
+    padding: 18px 0;
+}
+
+.options div {
+    background-color: #cccccc;
+    font-size: 15px;
+    color: #000000;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.options div.disabled{
+    pointer-events: none;
+}
+
+.options div.correct,
+.options div.wrong {
+    z-index: 1;
+    color: #fff;
+}
+
+.options div.correct::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    z-index: -1;
+}
+
+.options div.wrong::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    z-index: -1;
+}
+
+.button .btn{
+    padding: 15px 50px;
+    background-color: cyan;
+    font-size: 20px;
+    color: #000000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 15px 0;  
+}
+
+.answers-tracker {
+    border-top:1px solid #ccc;
+    padding-top: 10px;
+}
+.answers-tracker div{
+    height: 40px;
+    width: 40px;
+    background-color: #cccccc;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.answers-tracker div.correct{
+    background-color: green;
+}
+.answers-tracker div.wrong{
+    background-color: red;
+}
+
+.quiz-over{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 10;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+ .show{
+    display: flex;
+}
+.quiz-over .box{
+    background-color: cyan;
+    padding:30px;
+    border-radius:10px;
+    text-align: center;
+    flex-basis: 700px;
+    max-width: 700px;
+    color: #fff;
+}
+
+.quiz-over .box h1{
+    font-size: 36px;
+    margin: 0 0 20px;
+}
+
+.quiz-over .box button{
+    padding: 15px 50px;
+    border: none;
+    background-color: darkorange;
+    border-radius:10px;
+    font-size: 16px;
+    margin: 15px 0 20px;
+    color: #fff;
+}
